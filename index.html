@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaxiNation Ghana</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,sans-serif}
+body{background:#FFFBF0}
+header{padding:20px;display:flex;justify-content:space-between;background:#fff}
+.hero{padding:50px 20px;text-align:center}
+.hero h1{font-size:42px;font-weight:900;line-height:1.1}
+.hero h1 span{color:#FFC300}
+.btn{display:block;padding:18px;margin:15px auto;border-radius:12px;font-weight:700;text-align:center;text-decoration:none;max-width:350px}
+.btn-y{background:#FFC300;color:#000}
+.form{max-width:500px;margin:30px auto;background:#fff;padding:30px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.1)}
+input,select{width:100%;padding:16px;margin-bottom:12px;border:2px solid #eee;border-radius:10px;font-size:16px}
+.submit{width:100%;background:#25D366;color:#fff;padding:18px;border:none;border-radius:12px;font-weight:800;font-size:18px}
+</style>
+</head>
+<body>
+<header><b>TaxiNation</b><span>For Drivers</span></header>
+<div class="hero">
+<h1>Ghana's Taxis,<br><span>One Nation,</span><br>One App.</h1>
+<p style="margin:20px 0;color:#666">Only licensed yellow taxis. 12% commission. MoMo payments.</p>
+<a href="#join" class="btn btn-y">Join as Driver</a>
+</div>
+<div id="join" class="form">
+<h2 style="text-align:center">Join TaxiNation</h2>
+<p style="text-align:center;color:#666;margin:10px 0 20px">Will go to WhatsApp 0591096638</p>
+<form onsubmit="sendWA(event)">
+<input id="name" placeholder="Full Name" required>
+<input id="phone" placeholder="Your Phone Number" required>
+<input id="taxi" placeholder="Taxi Number e.g GR 1234-22" required>
+<select id="loc" required>
+<option value="">Select Station</option>
+<option value="Kaneshie">Kaneshie</option>
+<option value="Circle">Circle</option>
+<option value="East Legon">East Legon</option>
+<option value="Other">Other</option>
+</select>
+<button class="submit">Send to WhatsApp →</button>
+</form>
+</div>
+<script>
+function sendWA(e){
+e.preventDefault();
+var m=`Hello TaxiNation!%0A%0A*Name:* ${document.getElementById('name').value}%0A*My Number:* ${document.getElementById('phone').value}%0A*Taxi No:* ${document.getElementById('taxi').value}%0A*Station:* ${document.getElementById('loc').value}`;
+window.open(`https://wa.me/233591096638?text=${m}`,'_blank');
+}
+</script>
+</body>
+</html>
